@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practical 12</title>
+<style>
+body{
+display: inline-flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+width: 100vw;
+}
+.signin{
+padding: 20px;
+margin: auto;
+background-color: rgb(182, 182, 182);
+box-shadow: 1px 1px 1px 1px;
+}
+.signup{
+padding: 20px;
+margin:auto;
+background-color: rgb(182, 182, 182);
+box-shadow: 1px 1px 1px 1px;
+}
+button{
+padding: 10px;
+border-radius: 45%;
+border-style:groove;
+margin-top: 10px;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<!-- Sign IN -->
+<div class="signin">
+<h2>Sign In</h2>
+<form action="/signin" method="post">
+<label for="username">Username: </label>
+<input name="username" type="text">
+<br/>
+<br/>
+<label for="password">Password: </label>
+<input name="password" type="password">
+<br/>
+<button type="submit">SignIn</button>
+</form>
+</div>
+<br/>
+<br/>
+<!-- Sign Up -->
+<!--okay-->>
+<div class="signup">
+<h2>Sign Up</h2>
+<form action="/signup" method="post">
+<label for="username">Username: </label>
+<input name="username" type="text">
+<br/>
+<br/>
+<label for="password">Password: </label>
+<input name="password" type="password">
+<br/>
+<button type="submit">SignUp</button>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.button-grid{
+    display: grid;
+    grid-template-columns: repeat(3,70px);
+    grid-template-rows: repeat(3,70px);
+    }
+    #flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-family: 'Courier New', 'Franklin Gothic Medium', 'Gill Sans', 'Gill Sans MT',; */
+    }
+    .red{
+    color: red;
+    }

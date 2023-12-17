@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Data</title>
+<style>
+body {
+font-family: sans-serif;
+padding-top: 100px;
+display: flex;
+flex-direction: column-reverse;
+height: 100vh;
+width: 100vw;
+justify-content: center;
+align-items: center;
+}
+.pet {
+border: 5px dashed rgb(138, 130, 177);
+padding: 10px;
+margin-bottom: 10px;
+text-align: center;
+}
+.pet-name {
+font-weight: bold;
+font-family:'Times New Roman', Times, serif;
+font-size: x-large;
+}
+</style>
+</head>
+<body>
+<div id="pets"></div>
+<script>
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'pets.json');
+xhr.onload = function() {
+if (xhr.status === 200) {
+const pets = JSON.parse(xhr.responseText);
+const petList = document.getElementById('pets');
+for (const pet of pets) {
+const petElement = document.createElement('div');
+petElement.classList.add('pet');
+const petNameElement = document.createElement('h3');
+petNameElement.classList.add('pet-name');
+petNameElement.textContent = pet.name;
+petElement.appendChild(petNameElement);
+const petDetailsElement = document.createElement('p');
+petDetailsElement.textContent = `Age: ${pet.age} years`;
+petDetailsElement.textContent += ` | Weight: ${pet.weight} lbs`;
+petDetailsElement.textContent += ` | Type: ${pet.type}`;
+petDetailsElement.textContent += ` | Likes: ${pet.likes}`;
+petElement.appendChild(petDetailsElement);
+petList.appendChild(petElement);
+}
+} else {
+console.error('Error loading JSON data');
+}
+};
+xhr.send();
+</script>
+</body>
+</html>

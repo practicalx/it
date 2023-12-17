@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Operation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input, select, button {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        #result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Math Operation</h2>
+
+    <label for="expression">Enter Mathematical Expression:</label>
+    <input type="text" id="expression" placeholder="e.g., 2 + 3 * 4">
+
+    <label>Select Operation:</label>
+    <input type="radio" name="operation" value="square" id="square"> <label for="square">Square</label>
+    <input type="radio" name="operation" value="double" id="double"> <label for="double">Double</label>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <label for="result">Result:</label>
+    <input type="text" id="result" readonly>
+
+    <script>
+        function calculate() {
+            var expression = document.getElementById('expression').value;
+            var operation = document.querySelector('input[name="operation"]:checked').value;
+            var resultField = document.getElementById('result');
+            
+            if (expression.trim() === "") {
+                alert("Please enter a mathematical expression.");
+                return;
+            }
+
+            var result;
+            try {
+                var evalResult = eval(expression);
+                if (isNaN(evalResult)) {
+                    throw new Error("Invalid expression");
+                }
+
+                if (operation === "square") {
+                    result = Math.pow(evalResult, 2);
+                } else if (operation === "double") {
+                    result = evalResult * 2;
+                } else {
+                    throw new Error("Invalid operation");
+                }
+
+                resultField.value = result;
+            } catch (error) {
+                alert("Error: " + error.message);
+            }
+        }
+    </script>
+
+</body>
+</html>

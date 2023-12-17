@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Information Form</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+margin: 20px;
+}
+form {
+max-width: 400px;
+margin: 0 auto;
+}
+label {
+display: block;
+margin: 10px 0;
+}
+input, select {
+width: 100%;
+padding: 8px;
+margin-bottom: 10px;
+box-sizing: border-box;
+}
+button {
+padding: 10px;
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+#customerData {
+margin-top: 20px;
+}
+#customerData div {
+border: 1px solid #ddd;
+border-radius: 8px;
+padding: 10px;
+margin: 10px 0;
+text-align: left;
+}
+</style>
+</head>
+<body>
+<h1>Customer Information Form</h1>
+<form id="customerForm">
+<label for="firstName">First Name:</label>
+<input type="text" id="firstName" name="firstName" required>
+<label for="lastName">Last Name:</label>
+<input type="text" id="lastName" name="lastName" required>
+<label for="age">Age:</label>
+<input type="number" id="age" name="age" required>
+<label for="birthday">Birthday:</label>
+<input type="date" id="birthday" name="birthday" required>
+<label for="foodPreferences">Food Preferences:</label>
+<select id="foodPreferences" name="foodPreferences" required>
+<option value="vegetarian">Vegetarian</option>
+<option value="non-vegetarian">Non-Vegetarian</option>
+</select>
+<button type="button" onclick="submitForm()">Submit</button>
+</form>
+<div id="customerData"></div>
+<script>
+function submitForm() {
+const firstName = document.getElementById('firstName').value;
+const lastName = document.getElementById('lastName').value;
+const age = parseInt(document.getElementById('age').value);
+const birthday = document.getElementById('birthday').value;
+const foodPreferences = document.getElementById('foodPreferences').value;
+const customerObject = {
+firstName: firstName,
+lastName: lastName,
+age: age,
+birthday: birthday,
+foodPreferences: foodPreferences
+};
+console.log("Customer Object:", customerObject);
+console.log("JSON Representation:", JSON.stringify(customerObject));
+displayCustomerData(customerObject);
+}
+function displayCustomerData(customer) {
+const customerDataDiv = document.getElementById('customerData');
+const customerDiv = document.createElement('div');
+customerDiv.innerHTML = `
+<strong>Customer Information:</strong><br>
+<strong>First Name:</strong> ${customer.firstName}<br>
+<strong>Last Name:</strong> ${customer.lastName}<br>
+<strong>Age:</strong> ${customer.age}<br>
+<strong>Birthday:</strong> ${customer.birthday}<br>
+<strong>Food Preferences:</strong> ${customer.foodPreferences}
+`;
+customerDataDiv.appendChild(customerDiv);
+}
+</script>
+</body>
+</html>

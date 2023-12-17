@@ -1,0 +1,23 @@
+[
+    {
+    "name": "Max",
+    "age": 4,
+    "weight": 20.5,
+    "type": "dog",
+    "likes": "Playing fetch"
+    },
+    {
+    "name": "Mittens",
+    "age": 2,
+    "weight": 8.2,
+    "type": "cat",
+    "likes": "Cuddling"
+    },
+    {
+    "name": "Squeak",
+    "age": 1,
+    "weight": 3.5,
+    "type": "hamster",
+    "likes": "Running on his wheel"
+    }
+    ]

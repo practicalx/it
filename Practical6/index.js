@@ -1,0 +1,9 @@
+$("button.color").on("click",function(){
+    $("p").css("color",$(this).text())
+    })
+    $("button.font-size").on("click",function(){
+    $("p").css("fontSize",$(this).text()+"px")
+    })
+    $("button.font-family").on("click",function(){
+    $("p").css("font-family","'"+$(this).text()+"'")
+    })

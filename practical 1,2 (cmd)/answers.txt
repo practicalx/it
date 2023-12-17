@@ -1,0 +1,13 @@
+1) ipconfig /all
+
+2) 
+ping <ipaddres>
+
+tracert <ipaddres>
+
+netstat -n -b -p tcp
+
+
+3)
+
+

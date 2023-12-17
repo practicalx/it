@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome</title>
+<style>
+@keyframes gradientAnimation {
+0% {
+background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
+100% {
+background-position: 0% 50%;
+}
+}
+h1,h3,body {
+font-size: 3em;
+background: linear-gradient(45deg, #ff6b6b, #b1f2b2, #6b6bff, #f2b266);
+background-size: 400% 400%;
+color: transparent;
+-webkit-background-clip: text;
+background-clip: text;
+animation: gradientAnimation 10s ease infinite;
+}
+div{
+position: relative;
+left: 17%;
+top:10%;
+}
+</style>
+</head>
+<body>
+<div style="background-color: white;text-align: center;display: inline-block;padding-left:10px;padding-right: 10px;">
+<h1 style="font-size: 8rem;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Welcome User</h1>
+<h3 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size:3rem;padding-top: 10px;margin-top:10px;">You logged in successfully</h3>
+</div>
+</body>
+</html>
