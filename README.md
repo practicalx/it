@@ -1,7 +1,7 @@
-###practical 1
+### practical 1
 Display your systems IP Address, subnet mask using ipconfig, and find out the network address and the maximum number of systems possible on your network and range of IP addresses available to these systems
 
-###practical 2
+### practical 2
 With help of ping, check if you are connected to other systems of your network and find the route to connect to that system using tracert. List all the processes which are using ports for TCP protocol. 
 
 ###practical 3
